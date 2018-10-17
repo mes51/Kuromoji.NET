@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{20EBF825-1149-4761-88D7-6819531DB05A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kuromoji.NET</RootNamespace>
+    <AssemblyName>Kuromoji.NET</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buffer\BufferEntry.cs" />
+    <Compile Include="Buffer\FeatureInfoMap.cs" />
+    <Compile Include="Buffer\StringValueMapBuffer.cs" />
+    <Compile Include="Buffer\TokenInfoBuffer.cs" />
+    <Compile Include="Buffer\WordIdMap.cs" />
+    <Compile Include="Compile\CharacterDefinitionsCompiler.cs" />
+    <Compile Include="Compile\ConnectionCostsCompiler.cs" />
+    <Compile Include="Compile\DictionaryCompilerBase.cs" />
+    <Compile Include="Compile\DoubleArrayTrieCompiler.cs" />
+    <Compile Include="Compile\ICompiler.cs" />
+    <Compile Include="Compile\ProgressLog.cs" />
+    <Compile Include="Compile\TokenInfoBufferCompiler.cs" />
+    <Compile Include="Compile\TokenInfoDictionaryCompilerBase.cs" />
+    <Compile Include="Compile\UnknownDictionaryCompiler.cs" />
+    <Compile Include="Compile\WordIdMapCompiler.cs" />
+    <Compile Include="Dict\CharacterDefinitions.cs" />
+    <Compile Include="Dict\ConnectionCosts.cs" />
+    <Compile Include="Dict\DictionaryEntryBase.cs" />
+    <Compile Include="Dict\GenericDictionaryEntry.cs" />
+    <Compile Include="Dict\InsertedDictionary.cs" />
+    <Compile Include="Dict\DictionaryField.cs" />
+    <Compile Include="Dict\TokenInfoDictionary.cs" />
+    <Compile Include="Dict\UnknownDictionary.cs" />
+    <Compile Include="Extentions\ArrayExtension.cs" />
+    <Compile Include="TokenBase.cs" />
+    <Compile Include="TokenizerBase.cs" />
+    <Compile Include="Tokenizers\UniDicNEologd\Compile\DictionaryCompiler.cs" />
+    <Compile Include="Tokenizers\UniDicNEologd\Compile\DictionaryEntry.cs" />
+    <Compile Include="Tokenizers\UniDicNEologd\Compile\TokenInfoDictionaryCompiler.cs" />
+    <Compile Include="Tokenizers\UniDicNEologd\Token.cs" />
+    <Compile Include="Tokenizers\UniDicNEologd\Tokenizer.cs" />
+    <Compile Include="Tokenizers\UniDic\Compile\DictionaryCompiler.cs" />
+    <Compile Include="Tokenizers\UniDic\Compile\DictionaryEntry.cs" />
+    <Compile Include="Tokenizers\UniDic\Compile\TokenInfoDictionaryCompiler.cs" />
+    <Compile Include="Tokenizers\UniDic\Token.cs" />
+    <Compile Include="Tokenizers\UniDic\Tokenizer.cs" />
+    <Compile Include="Trie\DoubleArrayTrie.cs" />
+    <Compile Include="Trie\Trie.cs" />
+    <Compile Include="Tokenizers\UniDicKanaAccent\Compile\DictionaryCompiler.cs" />
+    <Compile Include="Tokenizers\UniDicKanaAccent\Compile\DictionaryEntry.cs" />
+    <Compile Include="Tokenizers\UniDicKanaAccent\Compile\TokenInfoDictionaryCompiler.cs" />
+    <Compile Include="Tokenizers\UniDicKanaAccent\Token.cs" />
+    <Compile Include="Tokenizers\UniDicKanaAccent\Tokenizer.cs" />
+    <Compile Include="Util\DictionaryEntryLineParser.cs" />
+    <Compile Include="Dict\IDictionary.cs" />
+    <Compile Include="Dict\UserDictionary.cs" />
+    <Compile Include="Extentions\ByteArrayExtension.cs" />
+    <Compile Include="Extentions\KeyValuePairExtension.cs" />
+    <Compile Include="Extentions\StreamExtension.cs" />
+    <Compile Include="Extentions\StringExtension.cs" />
+    <Compile Include="IO\ByteBufferIO.cs" />
+    <Compile Include="IO\IntArrayIO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trie\PatriciaTrie.cs" />
+    <Compile Include="Trie\PatriciaTrieFormatter.cs" />
+    <Compile Include="Util\IResourceResolver.cs" />
+    <Compile Include="Util\PriorityQueue.cs" />
+    <Compile Include="Util\Regexs.cs" />
+    <Compile Include="Util\ScriptUtils.cs" />
+    <Compile Include="IO\StringArrayIO.cs" />
+    <Compile Include="Util\SequenceStream.cs" />
+    <Compile Include="Util\UnknownDictionaryEntryParser.cs" />
+    <Compile Include="Util\ZipReadOnlyStream.cs" />
+    <Compile Include="Util\ZipResourceResolver.cs" />
+    <Compile Include="Viterbi\ITokenFactory.cs" />
+    <Compile Include="Viterbi\MultiSearcher.cs" />
+    <Compile Include="Viterbi\MultiSearchMerger.cs" />
+    <Compile Include="Viterbi\MultiSearchResult.cs" />
+    <Compile Include="Viterbi\ViterbiBuilder.cs" />
+    <Compile Include="Viterbi\ViterbiFormatter.cs" />
+    <Compile Include="Viterbi\ViterbiLattice.cs" />
+    <Compile Include="Viterbi\ViterbiNode.cs" />
+    <Compile Include="Viterbi\ViterbiSearcher.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
