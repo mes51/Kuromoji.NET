@@ -1,5 +1,6 @@
 ﻿using Kuromoji.NET.Tokenizers.UniDic;
 using System;
+using System.IO;
 
 namespace Kuromoji.NET.Example
 {
@@ -8,7 +9,8 @@ namespace Kuromoji.NET.Example
         static void Main(string[] args)
         {
             var input = "お寿司が食べたい。";
-            var tokenizer = new Tokenizer(@"C:\Users\mes\Desktop\Kuromoji.NET\Kuromoji.NET.Test\Resources\UniDic\unidic.zip");
+            var dictionaryPath = Path.Combine(Path.GetDirectoryName(typeof(Program).Assembly.Location), @"Resources\unidic.zip");
+            var tokenizer = new Tokenizer(dictionaryPath);
 
             Console.WriteLine($"input:\t{input}");
             foreach (var token in tokenizer.Tokenize(input))
